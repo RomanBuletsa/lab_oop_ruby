@@ -1,0 +1,2 @@
+module CategorycommentHelper
+end

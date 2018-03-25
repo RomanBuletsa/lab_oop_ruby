@@ -1,7 +1,16 @@
-<% if current_user.nil? %>
-<%= link_to user_session_path do %> Вхід
-<%end%>
-<% else %>
-<%= link_to destroy_user_session_path, method: :delete do %> Вийти
-<%end%>
-<%end%>
+<p><%= link_to "Create new category", new_category_path, class: "btn btn-default"%></p>
+<div class="pt">
+<% @categories.each do |category| %><br />
+<hr>
+<h1><%= link_to category.title, category_path(category.id)%></h1>
+<p>Author: <%= category.user.nickname%> |
+Create at: <%= category.created_at%>
+</p>
+<% if current_user != nil and current_user.id == category.user_id %>
+<p><%= link_to "Edit", edit_category_path(category.id) %>
+or
+<%= link_to "Delete", category_path(category.id), data: {confirm: 'Are you sure?'}, method: :delete %></p>
+<% end %>
+<% end %>
+</div>
+

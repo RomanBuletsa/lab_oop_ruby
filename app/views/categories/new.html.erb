@@ -1,0 +1,11 @@
+<%= form_for @category, url: categories_path, validate: true do |f| %>
+<% if @category.errors.any? %>
+<% @category.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+<% end %>
+
+<%= render 'categories/form', f:f %>
+
+<% end %>
+
