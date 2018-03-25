@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'photo/new'
+
   get 'categorycomment/new'
 
   get 'categories/new'
