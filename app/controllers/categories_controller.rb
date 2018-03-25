@@ -43,7 +43,7 @@ end
 private
 
 def category_params
-params.require(:category).permit(:user_id, :title)
+params.require(:category).permit(:user_id, :title, :image)
 end
 
 

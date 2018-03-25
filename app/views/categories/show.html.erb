@@ -1,10 +1,6 @@
 <h1><%= @category.title %></h1>
 <hr>
-<% @comments.each do |comment| %>
-<p> User <b style="color:#0489B1"><%= comment.user.nickname %></b> say</p>
-<%= comment.text %>
-<hr>
-<% end %>
+<%= image_tag(@category.image_url, height: '400', width: '700') %></br>
 
 <%= form_for :postcomment, url: category_categorycomments_path(category_id: @category.id) do |f| %>
 <% if flash[:notice] %>
